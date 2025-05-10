@@ -26,6 +26,7 @@
             <div class="col">
                 
                 <!-- Task 1 -->
+                <!--Membuat tugas "membuat fungsi delete pada tombol done"-->
                 <form action="{{ route('delete', $tasks->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
