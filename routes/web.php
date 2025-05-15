@@ -15,3 +15,6 @@ Route::post('todolist/tambah/data', [ToDoList::class, 'store'])->name('tambah');
 
 
 Route::delete('todolist/delete/{id}', [ToDoList::class, 'destroy'])->name('delete');
+
+Route::get('todolist/edit/{id}', [ToDoList::class, 'edit'])->name('edit');
+Route::put('todolist/update/{id}', [ToDoList::class, 'update'])->name('task.update');

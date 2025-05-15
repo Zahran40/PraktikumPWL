@@ -49,9 +49,31 @@ class ToDoList extends Controller
     return redirect()->route('home')->with('success', 'Task berhasil dihapus');
 }
 
+public function edit(Request $request )
+{
+    $task = Hari::find($request->id);
+    return view('edit', ['task' => $task]);
+   
+
+
+}
+
+public function update(Request $request)
+{
+    $validasi = $request->validate([
+        'task' => 'required|min:5|max:255',
+    ]);
+
+    $task = Hari::find($request->id);
+    $task->update([
+        'task' => $validasi['task'],
+        'tanggal'=>now(),
+    ]);
+
+    return redirect()->route('home')->with('success', 'Task berhasil diupdate');
 
 
 
 
-
+}
 }

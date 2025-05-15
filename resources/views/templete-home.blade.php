@@ -9,12 +9,14 @@
     <div class="col-md-6">
         <form action="{{ route('create') }}" method="get">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Type here" aria-label="Task input">
+                <input type="text" class="form-control" placeholder="Pergi Masukkan data baru" aria-label="Task input">
                 <button class="btn btn-success" type="submit">Add</button>
             </div>
         </form>
     </div>
 </div>
+
+
     
     <!-- Task List -->
     @foreach ( $task as $tasks  )
@@ -37,7 +39,7 @@
                     </div>
                     <div>
                         <button class="btn btn-sm btn-secondary" title="Detail">View</button>
-                        <button class="btn btn-sm btn-warning" title="Edit">Edit</button>
+                        <a class="btn btn-sm btn-warning" href="{{ route('edit', $tasks->id) }}" title="Edit">Edit</a>
                         
                         
                     <button class="btn btn-sm btn-success" title="Done" onclick="return confirm('Anda yakin menghapus data')" >Done</button>
