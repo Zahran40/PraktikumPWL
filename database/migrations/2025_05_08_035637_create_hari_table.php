@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('hari', function (Blueprint $table) {
-            $table->id("id");
+            $table->id("id")->autoIncrement();
             $table->date("tanggal");
             $table->string("task",100);
         });
